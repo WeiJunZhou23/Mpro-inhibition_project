@@ -38,7 +38,6 @@ from itertools import chain
 if __name__ == '__main__':
     args = parse_predict_args()
     embs = []
-    # add #
     scaler, features_scaler = load_scalers(args.checkpoint_paths[0])
     for checkpoint_path in tqdm(args.checkpoint_paths, total=len(args.checkpoint_paths)):
     # Load model
@@ -57,14 +56,11 @@ if __name__ == '__main__':
     test_file=args.test_path.split('/')[-1].split('.')[0]
     transposed_data = zip(*embs)
     embs_preds = [sum(column) / len(column) for column in transposed_data]
-    #print(embs_preds[:20])
     df_out=pd.DataFrame()
-    #df_out['smiles']=smiles
+    # df_out['smiles']=smiles
     df_out['KANO_preds'] = embs_preds
     df_out['KANO_preds']=df_out['KANO_preds'].astype(float)
-    df_out['KANO_preds_binary']=df_out['KANO_preds'] > 0.5
-    df_out['KANO_preds_binary']=df_out['KANO_preds_binary'].astype(int)
+    # df_out['KANO_preds_binary']=df_out['KANO_preds'] > 0.5 # For classification tasks
+    # df_out['KANO_preds_binary']=df_out['KANO_preds_binary'].astype(int) # For classification tasks
     save_path=args.preds_path
     df_out.to_csv(os.path.join(save_path,f'{test_file}_KANO_prediction.csv'), index=False)
-    
-    
