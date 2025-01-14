@@ -1,6 +1,6 @@
 # Mpro-Inhibition Project
 
-This repository is a fork of [KANO](https://github.com/HICAI-ZJU/KANO). It has been adapted and extended for use in research on SARS-CoV-2 main protease (Mpro) inhibitors.
+The SARS-CoV-2 main protease (Mpro) plays a critical role in the viral replication cycle, making it an attractive drug target for COVID-19 therapies. This project leverages deep learning to identify and evaluate potential Mpro inhibitors. Using the KANO model as a foundation, the repository integrates fine-tuning on custom datasets, enabling the identification of novel candidates with high precision and druglikeness properties. By advancing computational approaches to drug discovery, this project aims to accelerate the development of effective treatments for viral diseases.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -19,6 +19,8 @@ The prerequisites for running this project are listed in the original [KANO repo
 
 ### Usage
 ```bash
-bash finetune_Mpro.sh  # Fine-tune the model to predict Mpro-inhibition probability.
-bash finetune_logP.sh  # Fine-tune the model to predict logP.
-bash finetune_logS.sh  # Fine-tune the model to predict logS.
+bash finetune_Mpro.sh  # Fine-tune the pre-trained model to predict Mpro-inhibition probability.
+bash finetune_logP.sh  # Fine-tune the pre-trained model to predict logP.
+bash finetune_logS.sh  # Fine-tune the pre-trained model to predict logS.
+
+
