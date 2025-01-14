@@ -1,0 +1,17 @@
+python train.py\
+    --data_path ./data/Mpro_inhibitors/training_set.csv\
+    --separate_val_path ./data/Mpro_inhibitors/validation_set.csv\
+    --separate_test_path ./data/Mpro_inhibitors/test_set.csv\
+    --dataset_type classification\
+    --split_type random\
+    --metric accuracy\
+    --epochs 100\
+    --num_runs 1\
+    --gpu 0\
+    --batch_size 256\
+    --init_lr 5e-4\
+    --ensemble_size 10\
+    --step functional_prompt\
+    --exp_name finetune\
+    --exp_id Mpro\
+    --checkpoint_path "./dumped/pretrained_graph_encoder/original_CMPN_0623_1350_14000th_epoch.pkl"

@@ -1,0 +1,16 @@
+python train.py\
+    --data_path ./data/logP/openchem_logP.csv\
+    --dataset_type regression\
+    --split_type random\
+    --save_smiles_splits\
+    --metric rmse\
+    --epochs 100\
+    --num_runs 5\
+    --gpu 0\
+    --batch_size 256\
+    --init_lr 5e-4\
+    --ensemble_size 5\
+    --step functional_prompt\
+    --exp_name finetune\
+    --exp_id openchem_logP\
+    --checkpoint_path "./dumped/pretrained_graph_encoder/original_CMPN_0623_1350_14000th_epoch.pkl"
