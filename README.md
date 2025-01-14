@@ -18,9 +18,12 @@ This repository is based on the work of Fang, Y., Zhang, Q., Zhang, N., et al. T
 The prerequisites for running this project are listed in the original [KANO repository](https://github.com/HICAI-ZJU/KANO).
 
 ### Usage
-```bash
+```sh
 bash finetune_Mpro.sh  # Fine-tune the pre-trained model to predict Mpro-inhibition probability.
 bash finetune_logP.sh  # Fine-tune the pre-trained model to predict logP.
 bash finetune_logS.sh  # Fine-tune the pre-trained model to predict logS.
-
-
+```
+#### To make predictions using the fine-tuned regression model, use the following command:
+```sh
+python get_predict_regression.py --gpu 0 --test_path "${test_path}" --checkpoint_dir "${model_paths}" --preds_path "${output_path}"
+```
