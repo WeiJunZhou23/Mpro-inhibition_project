@@ -39,3 +39,7 @@ bash finetune_logS.sh  # Fine-tune the pre-trained model to predict logS.
 ```sh
 python get_predict_regression.py --gpu 0 --test_path "${test_path}" --checkpoint_dir "${model_paths}" --preds_path "${output_path}"
 ```
+### Example:
+```sh
+python get_predict_regression.py --gpu 0 --test_path "./data/Mpro_inhibitors/test_set.csv" --checkpoint_dir "./dumped/Mpro-inhibitor_models/" --preds_path "./dumped/Mpro-inhibitor_models/"
+```
