@@ -17,6 +17,18 @@ This repository is based on the work of Fang, Y., Zhang, Q., Zhang, N., et al. T
 ### Prerequisites
 The prerequisites for running this project are listed in the original [KANO repository](https://github.com/HICAI-ZJU/KANO).
 
+```sh
+python          3.7
+torch           1.13.1
+rdkit           2018.09.3
+numpy           1.20.3
+gensim          4.2.0
+nltk            3.4.5
+owl2vec-star    0.2.1
+Owlready2       0.37
+torch-scatter   2.0.9
+```
+
 ### Usage
 ```sh
 bash finetune_Mpro.sh  # Fine-tune the pre-trained model to predict Mpro-inhibition probability.
