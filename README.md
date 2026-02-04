@@ -4,25 +4,18 @@ The SARS-CoV-2 main protease (Mpro) plays a critical role in the viral replicati
 
 ## Folder structure
 
-- **KGembedding/**  
-  Code and resources for knowledge-graph / ontology based embeddings, used to
-  incorporate external chemical and biomedical knowledge into the KANO framework.
-
-- **chemprop/**  
-  Chemprop-related code and utilities, mainly used as a baseline or auxiliary
-  molecular property prediction model in this project.
-
-- **data/**  
-  All datasets used in this project, including datasets for Mpro inhibition
-  prediction, logP prediction, and logS prediction.
-
-- **dumped/**  
-  Output directory for experiments, including trained model checkpoints,
-  logs, and prediction results.
-
-- **initial/**  
-  Initial resources required before fine-tuning, such as pretrained models
-  or initialization files.
+```sh
+——KGembedding/                    # store ElementKG, and get the embeddings of eneities and relations in ElementKG
+——chemprop/                       # molecular graph preprocessing
+——data/                           # datasets used in this project, including datasets for Mpro inhibition prediction, logP prediction, and logS prediction
+  ├──Asinex_output/               # prediction of Asinex library compounds
+  ├──Mpro_inhibitors/             # Mpro dataset (train/val/test set)
+  ├──logP/                        # OpenChem logP dataset
+  ├──logS/                        # logS dataset
+  ├──62_approved_drugs_logS.csv   # 62 approved drugs from DrugBank with experimental logS and predicted logS
+——dumped/                         # store the checkpoints of the model
+——initial/                        # store the embeddings of ElementKG, and preprocess it for the model
+```
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -61,7 +54,13 @@ bash finetune_logS.sh  # Fine-tune the pre-trained model to predict logS.
 ```sh
 python get_predict_regression.py --gpu 0 --test_path "${test_path}" --checkpoint_dir "${model_paths}" --preds_path "${output_path}"
 ```
-### Example:
+
 ```sh
+# Example:
 python get_predict_regression.py --gpu 0 --test_path "./data/Mpro_inhibitors/test_set.csv" --checkpoint_dir "./dumped/Mpro-inhibitor_models/" --preds_path "./dumped/Mpro-inhibitor_models/"
+```
+
+### Asinex Library Workflow:
+```sh
+——workflow.ipynb # shows the Asinex library compound selection workflow
 ```
