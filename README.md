@@ -22,6 +22,7 @@ The SARS-CoV-2 main protease (Mpro) plays a critical role in the viral replicati
 - [Original Repository Acknowledgment](#original-repository-acknowledgment)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
+- [Asinex Library Workflow](#asinex-library-workflow)
 
 ## Project Overview
 This project aims to identify potential inhibitors of SARS-CoV-2 Mpro using advanced machine learning techniques. By fine-tuning the KANO model on a custom dataset of Mpro inhibitors, we hope to improve precision and discover novel drug candidates.
