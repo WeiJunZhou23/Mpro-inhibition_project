@@ -2,6 +2,28 @@
 
 The SARS-CoV-2 main protease (Mpro) plays a critical role in the viral replication cycle, making it an attractive drug target for COVID-19 therapies. This project leverages deep learning to identify and evaluate potential Mpro inhibitors. Using the KANO model as a foundation, the repository integrates fine-tuning on custom datasets, enabling the identification of novel candidates with high precision and druglikeness properties. By advancing computational approaches to drug discovery, this project aims to accelerate the development of effective treatments for viral diseases.
 
+## Folder structure
+
+- **KGembedding/**  
+  Code and resources for knowledge-graph / ontology based embeddings, used to
+  incorporate external chemical and biomedical knowledge into the KANO framework.
+
+- **chemprop/**  
+  Chemprop-related code and utilities, mainly used as a baseline or auxiliary
+  molecular property prediction model in this project.
+
+- **data/**  
+  All datasets used in this project, including datasets for Mpro inhibition
+  prediction, logP prediction, and logS prediction.
+
+- **dumped/**  
+  Output directory for experiments, including trained model checkpoints,
+  logs, and prediction results.
+
+- **initial/**  
+  Initial resources required before fine-tuning, such as pretrained models
+  or initialization files.
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Original Repository Acknowledgment](#original-repository-acknowledgment)
